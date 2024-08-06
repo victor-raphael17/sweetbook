@@ -8,31 +8,38 @@ export default class PrimaryScreen {
     public static loginScreen(): void {
 
         console.log(chalk.cyan('Welcome to SweetBook!\n'));
-        console.log('Enter', chalk.magenta('1'), 'to Sign In');
-        console.log('Enter', chalk.magenta('2'), 'to Register');
-        console.log('Enter', chalk.magenta('3'), 'to Quit\n');
+        console.log(chalk.magenta('1.'), 'Sign In');
+        console.log(chalk.magenta('2.'), 'Register');
+        console.log(chalk.magenta('3.'), 'Exit\n');
 
-        const userChoice = readlineSync.questionInt();
+        const userChoice = readlineSync.question();
 
         switch(userChoice) {
 
-            case 1:
+            case '1':
 
                 this.login();
 
                 break;
 
-            case 2:
+            case '2':
 
                 this.register();
             
                 break;
 
-            case 3:
+            case '3':
 
-                console.log(chalk.green('\nOk. Goodbye!!!\n'));
+                console.log(chalk.green('\nOk. Goodbye!!! :)\n'));
                 
                 BasicController.endSystem();
+
+
+            default:
+                
+                console.log('\nDigite uma opção válida!\n');
+
+                this.loginScreen();
 
         }
     }
