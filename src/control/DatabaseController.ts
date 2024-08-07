@@ -1,6 +1,6 @@
-import UserStorage from "../model/UserStorage.js";
+import { UserStorage } from "../model/UserStorage.js";
 
-export default class DatabaseController {
+export class DatabaseController {
 
     public static login(username: string, password: string): boolean {
 

@@ -1,6 +1,6 @@
-import ScreenController from "./ScreenController.js";
+import { ScreenController } from "./ScreenController.js";
 
-export default class BasicController {
+export class BasicController {
     
     public static startSystem(): void {
 
@@ -11,6 +11,12 @@ export default class BasicController {
     public static endSystem(): void {
 
         process.exit(0);
+
+    }
+
+    public getLoggedUser(username: string): void {
+
+        const loggedUser = username;
 
     }
 

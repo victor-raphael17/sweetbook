@@ -1,9 +1,9 @@
-import readlineSync from 'readline-sync';
+import readline from 'readline-sync';
 import chalk from 'chalk';
-import DatabaseController from '../control/DatabaseController.js';
-import BasicController from '../control/BasicController.js';
+import { DatabaseController } from '../control/DatabaseController.js';
+import { BasicController } from '../control/BasicController.js';
 
-export default class PrimaryScreen {
+export class PrimaryScreen {
 
     public static loginScreen(): void {
 
@@ -12,7 +12,7 @@ export default class PrimaryScreen {
         console.log(chalk.magenta('2.'), 'Register');
         console.log(chalk.magenta('3.'), 'Exit\n');
 
-        const userChoice = readlineSync.question();
+        const userChoice = readline.question();
 
         switch(userChoice) {
 
@@ -54,17 +54,17 @@ export default class PrimaryScreen {
 
         console.log(('\nEnter the'), chalk.magenta('username:\n'));
 
-        const username: string = readlineSync.question();
+        const username: string = readline.question();
 
         console.log(('\nEnter the'), chalk.magenta('password:\n'));
 
-        const password: string = readlineSync.question();
+        const password: string = readline.question();
 
         loginStatus = DatabaseController.login(username, password);
 
         if (loginStatus) {   
-            //temporário
-            console.log('\nParabéns');
+            
+            console.log('\nYou have successfully logged in!\/');
 
         } else {
 
@@ -89,21 +89,21 @@ export default class PrimaryScreen {
 
             console.log(('\nEnter your'), chalk.magenta('first two'), ('names:\n'));
 
-            fullName = readlineSync.question();
+            fullName = readline.question();
 
             console.log(('\nEnter your'), chalk.magenta('username:\n'));
 
-            registerUsername = readlineSync.question();
+            registerUsername = readline.question();
 
             do {
 
                 console.log(('\nEnter your'), chalk.magenta('password:\n'));
 
-                registerPassword = readlineSync.question();
+                registerPassword = readline.question();
 
                 console.log(('\nConfirm your'), chalk.magenta('password\n'));
                 
-                confirmPassword = readlineSync.question();
+                confirmPassword = readline.question();
 
                 if (confirmPassword != registerPassword) {
 

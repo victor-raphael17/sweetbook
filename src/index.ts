@@ -1,3 +1,3 @@
-import BasicController from "./control/BasicController.js";
+import { BasicController } from "./control/BasicController.js";
 
 BasicController.startSystem();

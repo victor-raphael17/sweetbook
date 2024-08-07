@@ -1,14 +1,7 @@
 import * as fs from 'fs';
+import { User } from './User.js';
 
-interface User {
-
-    username: string;
-    password: string;
-    fullName: string;
-
-}
-
-export default class UserStorage {
+export class UserStorage {
 
     private static dataFilePath: string = './src/db/userData.json';
     
