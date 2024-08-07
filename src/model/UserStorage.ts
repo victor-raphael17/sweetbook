@@ -11,6 +11,7 @@ interface User {
 export default class UserStorage {
 
     private static dataFilePath: string = './src/db/userData.json';
+    
     public static readData(): User[] {
 
         try {

@@ -8,6 +8,7 @@ export default class MainMenu {
         console.log(chalk.magenta('1.'), ('New Order\n'));
         console.log(chalk.magenta('2.'), ('Order List\n'));
         console.log(chalk.magenta('3.'), ('Exit\n'));
+        
     }
 
 }
